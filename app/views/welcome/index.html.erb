@@ -8,7 +8,6 @@
     <th>Email</th>
     <th>Department</th>
     <th>Message</th>
-    <th>Is it done?</th>
     <th>Actions</th>
   </tr>
 
@@ -19,16 +18,13 @@
     <td> <a href="mailto:<%= individual_support_request.email %>?Subject=About your request. " ><%= individual_support_request.email %></a></td>
     <td> <%= individual_support_request.department %>   </td>
     <td> <%= individual_support_request.message %> </td>
-    <td>  <%= individual_support_request.done %> </td>
 
     <td><%=  link_to "Edit", edit_support_request_path(individual_support_request) %></td>
 
     <td><%= link_to "Delete", support_request_path(individual_support_request), method: :delete, data: {confirm: "are you sure??"} %> </td>
 
     <%# link to path that will toggle the "done" status %>
-     <td><%# link_to individual_support_request.done, toggle_done_support_request_path(individual_support_request) %>
-          
-          <%=  link_to "Toggle", toggle_done_support_request_path(individual_support_request) %>
+     <td><%= link_to individual_support_request.done.to_s, toggle_done_support_request_path(individual_support_request) %>
      </td>
    </tr>   
   <% end %>

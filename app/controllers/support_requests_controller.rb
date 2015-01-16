@@ -50,7 +50,10 @@ class SupportRequestsController < ApplicationController
 
   def toggle_done
     # code to toggle the status of the clicked object
-
+    @support_request = SupportRequest.find params[:id]
+    # render text: params
+    @support_request.done = !@support_request.done
+    @support_request.save
     # then send user back to main page
     redirect_to support_requests_path
 

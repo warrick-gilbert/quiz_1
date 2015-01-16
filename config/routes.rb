@@ -10,7 +10,7 @@ get "/support_requests" => "welcome#index", as: :support_requests
 post "/support_requests" => "support_requests#create"
 
 # location to go to, to toggle the "done" status
-get "support_requests/toggle_done" => "support_requests#toggle_done", as: :toggle_done_support_request
+get "support_requests/:id/toggle_done" => "support_requests#toggle_done", as: :toggle_done_support_request
 
 # if the user wants to edit their request they go here
 get "/support_requests/:id/edit" => "support_requests#edit", as: :edit_support_request
