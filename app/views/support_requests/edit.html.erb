@@ -1,0 +1,7 @@
+<h1>Edit your ridiculous request!</h1>
+
+<%# all the code that was here has been shifted to a partial nearby %>
+<%= render "form" %>
+
+<%# and add a way of deleting the request. %>
+<%= link_to "Delete your request!! ", support_request_path(@support_request), method: :delete, data: {confirm: "are you sure??"} %>

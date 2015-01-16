@@ -1,0 +1,9 @@
+<h1>SHow and indvidual record here</h1>
+
+<h1> Your Support request is from  <%= @support_request.name %> </h1>
+
+<p> Your email is <%= @support_request.email %> </p>
+<p> Your department is <%= @support_request.department %> </p>
+<p> Your message is <%= @support_request.message %> </p>
+<br>
+<p> <%= link_to "Edit your SUpport Request", edit_support_request_path(@support_request) %></p>

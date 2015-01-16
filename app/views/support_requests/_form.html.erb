@@ -1,0 +1,33 @@
+<%# Here is my partial!!  %>
+
+<%# form_for is a built-in view helper to generate a form. By default this will send the form to whatever the name is
+pluralise it, and put _path on the end. in this case "questions_path" %>
+<%= form_for @support_request do |s| %>
+
+<%# label, text_field, these are all helpers from Rails   %>
+  <%= s.label :name %>
+  <%= s.text_field :name %>
+  <br>
+  <%= s.label :email %>
+  <%= s.text_field :email %>
+  <br>
+
+  <%= s.radio_button(:department, "Sales") %>
+  <%= s.label(:department_type, "Sales") %>
+
+  <%= s.radio_button(:department, "Marketing") %>
+  <%= s.label(:department_type, "Marketing") %>
+
+  <%= s.radio_button(:department, "Technical") %>
+  <%= s.label(:department_type, "Technical") %>
+
+  <br>
+  <%= s.label :message %>
+  <%= s.text_area :message %>
+  <br>
+<%# create a hidden field to set the "done" value to false. broken %>
+  <%# s.hidden_field :done,  value: "false" %>
+  s.done = false
+
+  <%= s.submit %>
+<% end %>

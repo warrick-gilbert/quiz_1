@@ -1,0 +1,30 @@
+<h1>Support Requests </h1>
+
+<a href="/new"> Click here to create a new support request</a>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Department</th>
+    <th>Message</th>
+    <th>Is it done?</th>
+  </tr>
+
+
+  <% @support_requests.each do |individual_support_request| %>
+  <tr>
+    <td> <%= individual_support_request.name %> </td>
+    <td> <a href="mailto:<%= individual_support_request.email %>?Subject=About your request. " ><%= individual_support_request.email %></a>
+ </td>
+    <td> <%= individual_support_request.department %>   </td>
+    <td> <%= individual_support_request.message %> </td>
+    <td>  <%= individual_support_request.done %> </td>
+
+  <!-- add a link path -->
+    <td><%=  link_to "Edit", edit_support_request_path(individual_support_request) %></td>
+    </tr>
+    
+  <% end %>
+
+</table>
