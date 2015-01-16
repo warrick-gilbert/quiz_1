@@ -9,6 +9,7 @@
     <th>Department</th>
     <th>Message</th>
     <th>Is it done?</th>
+    <th>Actions</th>
   </tr>
 
 
@@ -23,7 +24,14 @@
 
   <!-- add a link path -->
     <td><%=  link_to "Edit", edit_support_request_path(individual_support_request) %></td>
-    </tr>
+<td><%= link_to "Delete", support_request_path(individual_support_request), method: :delete, data: {confirm: "are you sure??"} %> </td>
+
+ </tr>
+
+
+
+
+
     
   <% end %>
 
