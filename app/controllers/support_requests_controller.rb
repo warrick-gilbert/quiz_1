@@ -48,6 +48,14 @@ class SupportRequestsController < ApplicationController
     redirect_to support_requests_path
   end
 
+  def toggle_done
+    # code to toggle the status of the clicked object
+
+    # then send user back to main page
+    redirect_to support_requests_path
+
+  end
+
   private
   def support_request_params
     # this is a security step. It only lets the variables through that we want.
